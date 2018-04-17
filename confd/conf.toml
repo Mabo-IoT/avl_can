@@ -1,0 +1,31 @@
+# The backend to use
+backend = "etcd"
+
+# The path to confd configs.
+confdir = "./confd"
+
+# Level which confd should log messages.
+log-level = "debug"
+
+# The backend polling interval in seconds.
+interval = 30
+
+# List of backend nodes.
+nodes = [
+    "http://10.203.96.26:2379/"
+    ]
+
+# Enable noop mode. Process all template resources; skip target update.
+noop = false
+
+# Enable watch support
+watch = false
+
+# The string to prefix to keys.
+prefix = ""
+
+# The backend URI scheme.("http" or "https")
+scheme = "http"
+
+# Sync without check_cmd and reload_cmd.
+sysnc-only = false

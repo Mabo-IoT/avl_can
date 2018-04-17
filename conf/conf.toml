@@ -1,0 +1,78 @@
+node = 'PEC0-03615'
+local_ip = "10.0.0.1"
+application = "ziyan"
+paths = ['./conf/conf.toml', './lua/enque_script.lua', './plugins/your_plugin.py']
+
+[user_conf]
+    [user_conf.check]
+    # check config
+    ip = '192.168.1.10'
+    port = 4001
+    dbc_path = './conf/avl.dbc'
+#    frame_ids = [1, 27, 60]
+
+    #kai fa tai jia
+    frame_ids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 ,27, 60]
+    signals = []
+
+#    #spin tai jia
+#    frame_ids = [15, 27, 40, 41, 42, 43, 44, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60]
+#    signals = ['bskl_air_t', 'dd_dccon_ec', 'tfc_out_p', 'da_sdal_f']
+#
+#    #ren zhen tai jia
+#    frame_ids = [1, 2, 3, 4, 5,  6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  26 ,27,
+#                28, 29, 30, 31, 32, 60]
+#    signals = ['cac_airi_p', 'cac_airo_p', 'cel_baro_p', 'af_air_t', 'fl_sup_t', 's_redf_x']
+    #bian su qi
+    # frame_ids = [1, 2, 3, 4, 5,  7, 8, 9, 10, 11, 12, 13, 21, 22, 27, 28, 33, 34, 35, 36, 37, 38, 39, 40,
+    #             41, 42, 43, 44, 45, 46, 47, 48]
+    # signals = ['cac_airi_p', 'oc_pidact_t', 'ex_bkpvlvr_set', 'fl_sup_t', 'e_bmep_p', 's_cl1p_dvl', 'bskl_air_t']
+
+
+    [user_conf.handler]
+    # handler config
+    table_name = 'AVL_engine_performance'
+    # table_name = 'AVL_engine_durability'
+    # table_name = 'AVL_transmission_durability'
+    # table_name = 'AVL_spin'
+    #field_name_list = ['Msg']
+    # 's' or 'u'
+    unit = 'u'
+
+
+[sender]
+    lua_path = './lua/enque_script.lua'
+    enque_log = true
+
+
+[redis]
+    db= 1
+    host= 'localhost'
+    port= 6379
+
+
+[etcd]
+    host = 'localhost'
+#    host = '10.203.96.26'
+    port = 2379
+
+    # register status data to etcd server interval time (s)
+    interval = 600
+
+
+[web]
+    set_name = 'status'
+    order_status = 'get_status'
+
+
+[log_configuration]
+    console = true
+    console_level = 'DEBUG'   #'DEBUG','INFO','WARNING','ERROR','CRITICAL'
+    file = true
+    file_level = 'DEBUG'  #'DEBUG','INFO','WARNING','ERROR','CRITICAL'
+    remote = true
+    remote_level = 'ERROR'  #'DEBUG','INFO','WARNING','ERROR','CRITICAL'
+    log_file = 'logs/log.log'
+    backup_count = 5
+    max_size = 10240
+    format_string = '(%(asctime)s), %(levelname)s, <%(threadName)s>, %(module)s, %(funcName)s, [%(lineno)d]: %(message)s'

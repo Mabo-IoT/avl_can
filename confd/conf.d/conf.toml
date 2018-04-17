@@ -1,0 +1,17 @@
+[template]
+# The relative path of a configuration template.(no need to add "templates/" string)
+src = "conf.tmpl"
+
+# The target file you want to update
+dest = './conf/conf.toml'
+
+# An array of keys which in etcd.
+keys = ["/nodes/PEC0-03615/ziyan/conf"]
+
+# The command to check config. Use {{.src}} to reference the rendered source template.
+# check_cmd = ""
+
+# The command to reload config.
+reload_cmd = "systemctl restart ziyan"
+
+

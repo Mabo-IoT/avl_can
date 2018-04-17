@@ -1,0 +1,6 @@
+# directory
+.idea/
+.vscode/
+
+# files
+*.pyc

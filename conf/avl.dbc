@@ -1,0 +1,301 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: EIM AVL
+
+BO_ 1 frame_1: 8 AVL
+ SG_ cwc_pidact_t : 0|32@1+ (0.001,0) [-250|300] "C"  EIM
+ SG_ cwc_wtrt_dvl : 32|32@1+ (0.001,0) [-250|300] "C"  EIM
+
+BO_ 2 frame_2: 8 AVL
+ SG_ cwc_wtri_t : 0|32@1+ (0.001,0) [-250|300] "C"  EIM
+ SG_ cwc_wtro_t : 32|32@1+ (0.001,0) [-250|300] "C"  EIM
+
+BO_ 3 frame_3: 8 AVL
+ SG_ cwc_wtri_p : 0|32@1+ (0.001,0) [0|100] "KPa"  EIM
+ SG_ cwc_wtro_p : 32|32@1+ (0.001,0) [0|100] "KPa"  EIM
+
+BO_ 4 frame_4: 8 AVL
+ SG_ cac_airt_dvl : 0|32@1+ (0.001,0) [-250|300] "-"  EIM
+ SG_ cac_airi_t : 32|32@1+ (0.001,0) [-250|300] "C"  EIM
+
+BO_ 5 frame_5: 8 AVL
+ SG_ cac_airo_t : 0|32@1+ (0.001,0) [-1000|3000] "C"  EIM
+ SG_ cac_airi_p : 32|32@1+ (0.001,0) [-1000|3000] "KPa"  EIM
+
+BO_ 6 frame_6: 8 AVL
+ SG_ cac_airo_p : 0|32@1+ (0.001,0) [-1000|3000] "KPa"  EIM
+ SG_ oc_eoilt_dvl : 32|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+
+BO_ 7 frame_7: 8 AVL
+ SG_ oc_pidact_t : 0|32@1+ (0.001,0) [-1000|3000] "C"  EIM
+ SG_ esp_oil_t : 32|32@1+ (0.001,0) [-1000|3000] "C"  EIM
+
+BO_ 8 frame_8: 8 AVL
+ SG_ op_oil_p : 0|32@1+ (0.001,0) [-1000|3000] "KPa"  EIM
+ SG_ og_oil_t : 32|32@1+ (0.001,0) [-1000|3000] "C"  EIM
+
+BO_ 9 frame_9: 8 AVL
+ SG_ og_oil_p : 0|32@1+ (0.001,0) [-1000|3000] "KPa"  EIM
+ SG_ ex_bkpvlvr_set : 32|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+
+BO_ 10 frame_10: 8 AVL
+ SG_ ex_prectbk_p : 0|32@1+ (0.001,0) [-1000|3000] "KPa"  EIM
+ SG_ ex_postctbk_p : 32|32@1+ (0.001,0) [-1000|3000] "KPa"  EIM
+
+BO_ 11 frame_11: 8 AVL
+ SG_ bct1_ex_t : 0|32@1+ (0.001,0) [-1000|3000] "C"  EIM
+ SG_ ct1a_ex_t : 32|32@1+ (0.001,0) [-1000|3000] "C"  EIM
+
+BO_ 12 frame_12: 8 AVL
+ SG_ tb1_exi_t : 0|32@1+ (0.001,0) [-1000|3000] "C"  EIM
+ SG_ tb1_exi_p : 32|32@1+ (0.001,0) [-1000|3000] "KPa"  EIM
+
+BO_ 13 frame_13: 8 AVL
+ SG_ tb2_exi_t : 0|32@1+ (0.001,0) [-1000|3000] "C"  EIM
+ SG_ tb2_exi_p : 32|32@1+ (0.001,0) [-1000|3000] "KPa"  EIM
+
+BO_ 14 frame_14: 8 AVL
+ SG_ cwc_wtrbyp_t : 0|32@1+ (0.001,0) [-1000|3000] "C"  EIM
+ SG_ cwc_wtrbyp_p : 32|32@1+ (0.001,0) [-1000|3000] "KPa"  EIM
+
+BO_ 15 frame_15: 8 AVL
+ SG_ d_spddig_n : 0|32@1+ (0.001,0) [-1000|3000] "r"  EIM
+ SG_ d_afil_tq : 32|32@1+ (0.001,0) [-1000|3000] "N"  EIM
+
+BO_ 16 frame_16: 8 AVL
+ SG_ e_pwr_pw : 0|32@1+ (0.001,0) [-1000|3000] "W"  EIM
+ SG_ tps_alpha_pct : 32|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+
+BO_ 17 frame_17: 8 AVL
+ SG_ cel_baro_p : 0|32@1+ (0.001,0) [-1000|3000] "KPa"  EIM
+ SG_ cel_relhum_pct : 32|32@1+ (0.001,0) [-1000|3000] "C"  EIM
+
+BO_ 18 frame_18: 8 AVL
+ SG_ af_air_t : 0|32@1+ (0.001,0) [-1000|3000] "C"  EIM
+ SG_ fr_f_t : 32|32@1+ (0.001,0) [-1000|3000] "C"  EIM
+
+BO_ 19 frame_19: 8 AVL
+ SG_ anl_lmbdafrcfr_x : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ im_air_ap : 32|32@1+ (0.001,0) [-1000|3000] "KPa"  EIM
+
+BO_ 20 frame_20: 8 AVL
+ SG_ im_air_p : 0|32@1+ (0.001,0) [-1000|3000] "KPa"  EIM
+ SG_ fr_f_p : 32|32@1+ (0.001,0) [-1000|3000] "KPa"  EIM
+
+BO_ 21 frame_21: 8 AVL
+ SG_ fl_sup_p : 0|32@1+ (0.001,0) [-1000|3000] "KPa"  EIM
+ SG_ fl_sup_t : 32|32@1+ (0.001,0) [-1000|3000] "KPa"  EIM
+
+BO_ 22 frame_22: 8 AVL
+ SG_ cc_gas_p : 0|32@1+ (0.001,0) [-1000|3000] "KPa"  EIM
+ SG_ e_bmep_p : 32|32@1+ (0.001,0) [-1000|3000] "KPa"  EIM
+
+BO_ 23 frame_23: 8 AVL
+ SG_ e_obsfc_fe : 0|32@1+ (0.001,0) [-1000|3000] "KPa"  EIM
+ SG_ s_airc_mf : 32|32@1+ (0.001,0) [-1000|3000] "KPa"  EIM
+
+BO_ 24 frame_24: 8 AVL
+ SG_ cbn_ve_pct : 0|32@1+ (0.001,0) [-1000|3000] "KPa"  EIM
+ SG_ s_redf_x : 32|32@1+ (0.001,0) [-1000|3000] "KPa"  EIM
+
+BO_ 25 frame_25: 8 AVL
+ SG_ s_redec_pw : 0|32@1+ (0.001,0) [-1000|3000] "KPa"  EIM
+ SG_ s_tqred_tq : 32|32@1+ (0.001,0) [-1000|3000] "KPa"  EIM
+
+BO_ 26 frame_26: 8 AVL
+ SG_ e_edsp_vl : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ f_f_dox : 32|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+
+BO_ 27 frame_27: 8 AVL
+ SG_ status : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ bskl_air_t : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 28 frame_28: 8 AVL
+ SG_ cac_airi_ap : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ cac_airo_ap : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 29 frame_29: 8 AVL
+ SG_ bskl_cba_ap : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ cel_air_t : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 30 frame_30: 8 AVL
+ SG_ s_f_t : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ s_saeredf_x : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 31 frame_31: 8 AVL
+ SG_ s_saeapp_pw : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ e_saeapp_tq : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 32 frame_32: 8 AVL
+ SG_ ecol_res_p : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ eo_cool_vf : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 33 frame_33: 8 AVL
+ SG_ esp_oilt_dvl : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ skl_air_t : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 34 frame_34: 8 AVL
+ SG_ fb_f_m : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ dfl_act_n : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 35 frame_35: 8 AVL
+ SG_ dfr_act_n : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ dfl_flg_tq : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 36 frame_36: 8 AVL
+ SG_ dfr_flg_tq : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ e_act_n : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 37 frame_37: 8 AVL
+ SG_ s_alpha_dvl : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ bcp_hvbcsoc_pct : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 38 frame_38: 8 AVL
+ SG_ v_act_n : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ tfc_in_t : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 39 frame_39: 8 AVL
+ SG_ tfc_out_t : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ tfc_in_p : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 40 frame_40: 8 AVL
+ SG_ tfc_out_p : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ t_line_p : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 41 frame_41: 8 AVL
+ SG_ tfc_toil_vf : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ t_sump_t : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 42 frame_42: 8 AVL
+ SG_ t_tpimci_t : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ t_tpimco_t : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 43 frame_43: 8 AVL
+ SG_ t_tpimci_p : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ t_tpimco_p : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 44 frame_44: 8 AVL
+ SG_ tpim_clr_vf : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ dd_dccon_ec : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 45 frame_45: 8 AVL
+ SG_ dd_dccon_pw : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ dd_dccon_v : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 46 frame_46: 8 AVL
+ SG_ ecu_prndl_x : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ tpim_emtra_n : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 47 frame_47: 8 AVL
+ SG_ tpim_emtrb_n : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ da_cpal_f : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 48 frame_48: 8 AVL
+ SG_ da_sdal_f : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ s_cl1p_dvl : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 49 frame_49: 8 AVL
+ SG_ s_cl2p_dvl : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ s_cl3p_dvl : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 50 frame_50: 8 AVL
+ SG_ s_cl4p_dvl : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ s_tccp_dvl : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 51 frame_51: 8 AVL
+ SG_ t_aot_n : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ dcb_toss_n : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 52 frame_52: 8 AVL
+ SG_ s_tq_tq : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ tfc_toil_t : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 53 frame_53: 8 AVL
+ SG_ tfc_toilt_dvl : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ tpim_emtratestmode_dvl : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 54 frame_54: 8 AVL
+ SG_ tpim_emtrbtestmode_dvl : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ tpim_emtrctestmode_dvl : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 55 frame_55: 8 AVL
+ SG_ s_emtratq_dvl : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ s_emtrbtq_dvl : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 56 frame_56: 8 AVL
+ SG_ s_emtran_dvl : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ s_emtrbn_dvl : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 57 frame_57: 8 AVL
+ SG_ s_emtrcn_dvl : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ s_emtraconnect_dvl : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 58 frame_58: 8 AVL
+ SG_ s_emtrbconnect_dvl : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ s_emtrcconnect_dvl : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 59 frame_59: 8 AVL
+ SG_ tpim_hcpconnect_dvl : 0|32@1+ (0.001,0) [-1000|3000] "-"  EIM
+ SG_ dd_dcdcedi_f : 32|32@1+ (0.001,0) [-1000|3000] "-" EIM
+
+BO_ 60 frame_60: 8 AVL
+ SG_ ok_733 : 0|2@1+ (1,0) [0|2] "-"  EIM
+ SG_ ok_753 : 2|2@1+ (1,0) [0|2] "-" EIM
+ SG_ ok_740 : 4|2@1+ (1,0) [0|2] "-"  EIM
+ SG_ ok_acs : 6|2@1+ (1,0) [0|2] "-" EIM
+ SG_ ok_12v : 8|2@1+ (1,0) [0|2] "-"  EIM
+ SG_ ok_553_eng : 10|2@1+ (1,0) [0|2] "-" EIM
+ SG_ ok_554_eng : 12|2@1+ (1,0) [0|2] "-"  EIM
+ SG_ ok_553_tran : 14|2@1+ (1,0) [0|2] "-" EIM
+ SG_ ok_554_tran : 16|2@1+ (1,0) [0|2] "-"  EIM
+ SG_ ok_442 : 18|2@1+ (1,0) [0|2] "-" EIM
+ SG_ ok_i60 : 20|2@1+ (1,0) [0|2] "-"  EIM
+ SG_ ok_489 : 22|2@1+ (1,0) [0|2] "-" EIM
+ SG_ ok_483 : 24|2@1+ (1,0) [0|2] "-"  EIM
+ SG_ ok_439 : 26|2@1+ (1,0) [0|2] "-" EIM
+ SG_ ok_415 : 28|2@1+ (1,0) [0|2] "-"  EIM
+ SG_ ok_515 : 30|2@1+ (1,0) [0|2] "-" EIM
+ SG_ ok_577 : 32|2@1+ (1,0) [0|2] "-"  EIM
+ SG_ ok_gas : 34|2@1+ (1,0) [0|2] "-" EIM
+ SG_ ok_fire : 36|2@1+ (1,0) [0|2] "-"  EIM
+
+BO_ 61 frame_61: 8 AVL
+ SG_ s_cycdone_cnt : 0|32@1+ (0.001,0) [0|400000] "-"  EIM
+
+
+
+
+
