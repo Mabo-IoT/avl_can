@@ -120,38 +120,15 @@ class MyCheck(Check):
         # 1: normal
         # 2: don't exit
         warning_dicts = {
-         'ok_733': "733燃油称重仪报警;",
-         'ok_753': "753燃油温度控制系统报警;",
-         'ok_740': "体积测量式油耗仪740报警;",
-         'ok_acs': "ACS进气可调节设备报警;",
-         'ok_12v': "安捷伦12V电源报警;",
-         'ok_553_eng': "发动机冷却液调节系统553报警;",
-         'ok_554_eng': "发动机机油温控设备554报警;",
-         'ok_553_tran': "变速箱电机水冷553报警;",
-         'ok_554_tran': "变速箱油冷554报警;",
-         'ok_442': "BLOW BY442报警;",
-         'ok_i60': "排放分析仪（AMA i60）报警;",
-         'ok_489': "PN测量设备（AVL 489）报警;",
-         'ok_483': "PM测量设备（AVL 483）报警;",
-         'ok_439': "AVL439烟度计报警;",
-         'ok_415': "AVL415烟度计报警;",
-         'ok_515': "单缸机进气压力、温度调节设备报警;",
-         'ok_577': "单缸机水温油温二合一控制调节设备报警;",
          'ok_gas': "气体报警;",
          'ok_fire': "火警报警;",
-         'ok_co': "一氧化碳报警",
-         'ok_hc': "碳氢报警",
-         'ok_gas2': "气体二级报警",
-         'ok_shaft': "保护罩报警",
-         'ok_ps': "空气弹簧报警",
         }
         warning_string = ''
         warning_message = {}
 
-        for k in warning_dicts.keys():
-            if k in data_dicts.keys():
-                if data_dicts[k] == 0:
-                    warning_string = warning_string + warning_dicts[k]
+        for k in warning_dicts.keys() & data_dicts.keys():
+            if data_dicts[k] == 0:
+                warning_string = warning_string + warning_dicts[k]
 
             # data_dicts.pop(k) # remove key
         warning_message = {'warning': warning_string }
@@ -217,9 +194,10 @@ class MyCheck(Check):
                     }
 
         status_number = data_dicts['status']
+        speed = data_dicts.get('d_spddig_n', 70)
 
         #  set status is 1 if auto
-        if status_number == 500 or status_number == 200:
+        if status_number == 500 or (status_number == 200 and speed >= 60):
             data_dicts['status'] = 1.0
         else:
             data_dicts['status'] = 0.0
