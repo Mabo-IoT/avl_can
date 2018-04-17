@@ -32,7 +32,7 @@ class MyCheck(Check):
                 self.necessary_frame_id_list = self.conf['frame_ids']
                 self.unnecessary_signals = self.conf['signals']
                 self.bus = client.TcpcanBus(port=self.conf['port'], ip=self.conf['ip'])
-
+                self.count = 0 # init count for count times of recv data
                 break # only build a tcp connnection, can go to next step
 
             except Exception as e:
@@ -106,6 +106,7 @@ class MyCheck(Check):
         log.debug(original_dicts)
         for k, v in original_dicts.items():
             original_dicts[k] = self.int_to_float(v)
+        original_dicts['bskl_cba_ap'] /= 10
 
         return  original_dicts
 
@@ -231,9 +232,6 @@ class MyCheck(Check):
 
         data_dicts.update(warning)
 
-        # upgrade calculate method only for 5W01， 5M01 cel_baro_p
-        # data_dicts['cel_baro_p'] = data_dicts['cel_baro_p'] / 10.0
-
         return data_dicts
 
     def reconnect(self):
@@ -252,6 +250,9 @@ class MyCheck(Check):
         log.debug("begin~~~~~~~~~~~~~~~~~~~~~~!!!!!!!!!!!!!!!!")
         # trying recv data:
         try:
+            # time.sleep(1)
+            # when self. count=10, send data to low 10Hz to 1Hz
+            
             data_original = self.bus_recv()
 
             data_convert_dicts = self.dbc_convert(data_original)
@@ -264,8 +265,13 @@ class MyCheck(Check):
             #final_data_dicts = data_dicts_handle
 
             log.debug('data dict is {}'.format(final_data_dicts))
+            
+            if self.count >= 10:
+                self.count = 0
+                yield final_data_dicts
+            else:
+                self.count = self.count + 1
 
-            yield final_data_dicts
 
         except Exception as e:
             log.error(e)
@@ -307,10 +313,9 @@ class MyHandler(Handler):
         # 数据经过处理之后生成 value_list
         log.debug('%s', raw_data)
         data_value_list = raw_data
-        tags = {'eqpt_no': 'PEC0-5E08'}
+        tags = {'eqpt_no': '32220000365'}
 
         # user 可以在handle里自己按数据格式制定tags
         user_postprocessed = {'data_value': data_value_list,
                               'tags': tags}
-        # time.sleep(1)
         yield user_postprocessed
