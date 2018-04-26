@@ -197,7 +197,7 @@ class MyCheck(Check):
         speed = data_dicts.get('d_spddig_n', 70)
 
         #  set status is 1 if auto
-        if status_number == 500 or (status_number == 200 and speed >= 60):
+        if status_number == 500 or (status_number == 200 and speed >= 600):
             data_dicts['status'] = 1.0
         else:
             data_dicts['status'] = 0.0
